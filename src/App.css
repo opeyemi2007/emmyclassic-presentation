@@ -99,7 +99,7 @@ h1 span, h2 span {
 }
 
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .slide {
     padding: 40px 20px;
   }
@@ -116,4 +116,4 @@ h1 span, h2 span {
     flex-direction: column;
     text-align: center;
   }
-} */
+}

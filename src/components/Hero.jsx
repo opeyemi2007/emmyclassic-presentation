@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="hero">
       
-      <img src="public/Gemini_Generated_Image_95bl6e95bl6e95bl.png" alt="EmmyClassic Logo" className="logo" />
+      <img src="/Gemini_Generated_Image_95bl6e95bl6e95bl.png" alt="EmmyClassic Logo" className="logo" />
 
       <p className="tag">EMMYCLASSIC MAKEUP</p>
 

@@ -74,10 +74,10 @@ useEffect(() => {
   return (
     <>
       <div className="floatingLayer">
-        <img src="public/Gemini_Generated_Image_3gosr93gosr93gos.png" className="floatImg img1" />
-        <img src="public/Gemini_Generated_Image_4zyjli4zyjli4zyj.png" className="floatImg img2" />
-        <img src="public/Gemini_Generated_Image_hbba4xhbba4xhbba.png" className="floatImg img3" />
-        <img src="public/Gemini_Generated_Image_jbwckhjbwckhjbwc.png" className="floatImg img4" />
+        <img src="/Gemini_Generated_Image_3gosr93gosr93gos.png" className="floatImg img1" />
+        <img src="/Gemini_Generated_Image_4zyjli4zyjli4zyj.png" className="floatImg img2" />
+        <img src="/Gemini_Generated_Image_hbba4xhbba4xhbba.png" className="floatImg img3" />
+        <img src="/Gemini_Generated_Image_jbwckhjbwckhjbwc.png" className="floatImg img4" />
       </div>
       <div className="container" ref={containerRef}>
         <section className="slide"><Hero /></section>
