@@ -13,8 +13,8 @@ export default function Closing() {
       </p>
 
       <div className="contact">
-        <p><span>Email:</span> emmyclassic@beauty.com</p>
-        <p><span>Instagram:</span> @emmyclassicmakeup</p>
+        <p><span>Email:</span> classicmediateam@gmail.com</p>
+        <p><span>Instagram:</span> @classicmakeup</p>
         <p><span>Location:</span> Nigeria</p>
       </div>
 
