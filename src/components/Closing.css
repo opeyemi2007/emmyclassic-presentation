@@ -1,0 +1,48 @@
+.closing {
+  text-align: center;
+  max-width: 900px;
+}
+
+.closing h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.closing h1 span {
+  color: #B81111;
+}
+
+.closing p {
+  opacity: 0.75;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact {
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+
+.contact span {
+  color: #B81111;
+  font-weight: bold;
+}
+
+button {
+  background: #B81111;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}

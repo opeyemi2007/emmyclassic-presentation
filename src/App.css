@@ -1,0 +1,119 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  position: relative;
+  z-index: 2;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 60px;
+
+  /* important for animation trigger */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1, h2 {
+  letter-spacing: -0.5px;
+}
+
+h1 span, h2 span {
+  text-shadow: 0 0 20px rgba(184, 17, 17, 0.4);
+}
+
+.nextBtn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background: #B81111;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nextBtn:hover {
+  transform: scale(1.05);
+}
+
+.floatingLayer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* real product images */
+.floatImg {
+  position: absolute;
+  width: 120px;
+  opacity: 0.30;
+  animation: floatMove 18s infinite ease-in-out;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
+}
+
+/* individual positioning */
+.img1 { top: 10%; left: 10%; animation-delay: 0s; }
+.img2 { top: 60%; left: 15%; animation-delay: 3s; }
+.img3 { top: 30%; left: 75%; animation-delay: 6s; }
+.img4 { top: 75%; left: 60%; animation-delay: 9s; }
+
+@keyframes floatMove {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(5deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+
+/* @media (max-width: 768px) {
+  .slide {
+    padding: 40px 20px;
+  }
+
+  h1, h2 {
+    font-size: 32px !important;
+  }
+
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+} */
