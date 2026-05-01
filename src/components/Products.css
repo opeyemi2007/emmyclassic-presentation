@@ -1,0 +1,168 @@
+/* SECTION */
+.products {
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TITLE */
+.products h2 {
+  font-size: 56px;
+  margin-bottom: 10px;
+}
+
+.products h2 span {
+  color: #B81111;
+}
+
+.subtitle {
+  opacity: 0.7;
+  margin-bottom: 50px;
+}
+
+/* CAROUSEL */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* TRACK (AUTO SLIDE) */
+.track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+
+  animation: scrollCarousel 22s linear infinite;
+}
+
+/* PAUSE ON HOVER */
+.carousel:hover .track {
+  animation-play-state: paused;
+}
+
+/* ANIMATION */
+@keyframes scrollCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* PRODUCT CARD */
+.productCard {
+  min-width: 400px;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+/* HOVER EFFECT */
+.productCard:hover {
+  transform: scale(1);
+  border-color: #B81111;
+}
+
+/* PRODUCT IMAGE (BIG + PREMIUM) */
+.productCard img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  margin-bottom: 15px;
+
+  filter: drop-shadow(0 20px 40px rgba(49, 49, 49, 0.492));
+  transition: transform 0.4s ease;
+}
+
+/* IMAGE HOVER */
+.productCard:hover img {
+  transform: scale(1.08);
+}
+
+/* PRODUCT NAME */
+.productCard p {
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+
+/* ========================= */
+/* 📱 TABLET (≤ 1024px) */
+/* ========================= */
+@media (max-width: 1024px) {
+  .products {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .productCard {
+    min-width: 320px;
+  }
+
+  .productCard img {
+    height: 220px;
+  }
+
+  .track {
+    gap: 30px;
+    animation: scrollCarousel 26s linear infinite; /* slower */
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE (≤ 768px) */
+/* ========================= */
+@media (max-width: 768px) {
+  .products h2 {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .carousel {
+    padding: 20px 0;
+  }
+
+  .productCard {
+    min-width: 260px;
+    padding: 15px;
+  }
+
+  .productCard img {
+    height: 180px;
+  }
+
+  .track {
+    gap: 20px;
+    animation: scrollCarousel 30s linear infinite; /* slower = smoother */
+  }
+}
+
+/* ========================= */
+/* 📱 SMALL PHONES (≤ 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+  .products h2 {
+    font-size: 28px;
+  }
+
+  .productCard {
+    min-width: 220px;
+  }
+
+  .productCard img {
+    height: 150px;
+  }
+
+  .track {
+    animation: scrollCarousel 35s linear infinite;
+  }
+}

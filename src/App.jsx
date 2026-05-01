@@ -8,69 +8,70 @@ import WhatWeDo from "./components/WhatWeDo";
 import Mission from "./components/Mission";
 import WhyChoose from "./components/WhyChoose";
 import Closing from "./components/Closing";
+import Products from "./components/Products";
 
 export default function App() {
   const containerRef = useRef(null);
 
-const scrollToNext = () => {
-  const container = containerRef.current;
-  if (!container) return;
+  const scrollToNext = () => {
+    const container = containerRef.current;
+    if (!container) return;
 
-  const slides = container.querySelectorAll(".slide");
+    const slides = container.querySelectorAll(".slide");
 
-  const scrollTop = container.scrollTop;
-  const height = container.clientHeight;
+    const scrollTop = container.scrollTop;
+    const height = container.clientHeight;
 
-  const nextIndex = Math.min(
-    Math.floor(scrollTop / height) + 1,
-    slides.length - 1
-  );
+    const nextIndex = Math.min(
+      Math.floor(scrollTop / height) + 1,
+      slides.length - 1
+    );
 
-  container.scrollTo({
-    top: nextIndex * height,
-    behavior: "smooth",
-  });
-};
-
-const scrollToPrev = () => {
-  const container = containerRef.current;
-  if (!container) return;
-
-  const scrollTop = container.scrollTop;
-  const height = container.clientHeight;
-
-  const prevIndex = Math.max(
-    Math.floor(scrollTop / height) - 1,
-    0
-  );
-
-  container.scrollTo({
-    top: prevIndex * height,
-    behavior: "smooth",
-  });
-};
-
-useEffect(() => {
-  const slides = document.querySelectorAll(".slide");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  slides.forEach((slide) => observer.observe(slide));
-
-  return () => {
-    slides.forEach((slide) => observer.unobserve(slide));
-    observer.disconnect();
+    container.scrollTo({
+      top: nextIndex * height,
+      behavior: "smooth",
+    });
   };
-}, []);
+
+  const scrollToPrev = () => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const scrollTop = container.scrollTop;
+    const height = container.clientHeight;
+
+    const prevIndex = Math.max(
+      Math.floor(scrollTop / height) - 1,
+      0
+    );
+
+    container.scrollTo({
+      top: prevIndex * height,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const slides = document.querySelectorAll(".slide");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    slides.forEach((slide) => observer.observe(slide));
+
+    return () => {
+      slides.forEach((slide) => observer.unobserve(slide));
+      observer.disconnect();
+    };
+  }, []);
   return (
     <>
       <div className="floatingLayer">
@@ -83,6 +84,7 @@ useEffect(() => {
         <section className="slide"><Hero /></section>
         <section className="slide"><About /></section>
         <section className="slide"><Brands /></section>
+        <section className="slide"><Products /></section>
         <section className="slide"><WhatWeDo /></section>
         <section className="slide"><Mission /></section>
         <section className="slide"><WhyChoose /></section>
